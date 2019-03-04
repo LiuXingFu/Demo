@@ -13,12 +13,14 @@ import java.sql.Statement;
  * @date 2019年3月4日 上午10:55:18
  */
 public class MysqlUtils {
+	
 	private static Connection connection = null;
 	private static Statement statement = null;
 	private static String url = "jdbc:mysql://localhost:3306/test01";
 	private static String user = "root";
 	private static String password = "liu24357";
 
+	//返回一个Statement对象
 	public static Statement ReturnStatement(){
 		try {
 			// 注册驱动
