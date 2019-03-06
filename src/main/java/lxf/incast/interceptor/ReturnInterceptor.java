@@ -7,8 +7,9 @@ import java.util.Date;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import lxf.incast.test.TestSession;
-import lxf.incast.utils.MysqlUtils;
+import lxf.incast.entity.Record;
+import lxf.incast.service.RecordService;
+import lxf.incast.service.impl.RedcordServiceImpl;
 
 /**
  * 使用监听，记录用户的ip，时间
@@ -20,13 +21,15 @@ import lxf.incast.utils.MysqlUtils;
 public class ReturnInterceptor implements HttpSessionListener {
 
 	private static Statement statement = null;
-
+	private static Record record = null;
+	private RecordService recordService = new RedcordServiceImpl();
+	
 	public void sessionCreated(HttpSessionEvent se) {
-
+		
 		/**
 		 * ----------将用户IP和第一次访问时间存储到数据库-----------
 		 */
-		synchronized (TestSession.class) {
+		synchronized (ReturnInterceptor.class) {
 			// 获取Statement对象
 			try {
 				// 获取用户的IP
@@ -37,17 +40,10 @@ public class ReturnInterceptor implements HttpSessionListener {
 				// 获取当前的时间
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				String time = dateFormat.format(new Date());
-
-				statement = MysqlUtils.ReturnStatement();
-				// 准备sql
-				String sql = "insert into record_Demo(record_IP,record_Time) values('" + IP + "','" + time + "')";
-
-				int num = statement.executeUpdate(sql);
-				statement.close();
-				MysqlUtils.CloseConnection();
-				System.out.println("影响行数：" + num);
+				record.setRecord_IP(IP);
+				record.setRecord_Time(time);
+				recordService.RecordAdd(record);
 			} catch (Exception e) {
-				// TODO: handle exception
 				e.printStackTrace();
 			}
 		}
