@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 import lxf.incast.entity.Record;
+import lxf.incast.redis.RedisService;
 import lxf.incast.service.RecordService;
 import lxf.incast.service.impl.RedcordServiceImpl;
 
@@ -23,6 +24,7 @@ public class ReturnInterceptor implements HttpSessionListener {
 	private static Statement statement = null;
 	private static Record record = null;
 	private RecordService recordService = new RedcordServiceImpl();
+	private RedisService redisService = new RedisService();
 	
 	public void sessionCreated(HttpSessionEvent se) {
 		
@@ -43,6 +45,7 @@ public class ReturnInterceptor implements HttpSessionListener {
 				record.setRecord_IP(IP);
 				record.setRecord_Time(time);
 				recordService.RecordAdd(record);
+				redisService.setRedis_Record();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
