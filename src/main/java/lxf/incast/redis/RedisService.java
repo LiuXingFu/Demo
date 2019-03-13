@@ -6,7 +6,9 @@ import java.util.List;
 import com.alibaba.fastjson.JSON;
 
 import lxf.incast.entity.Record;
+import lxf.incast.service.RecordMybatisService;
 import lxf.incast.service.RecordService;
+import lxf.incast.service.impl.RecordMybatisServiceImpl;
 import lxf.incast.service.impl.RedcordServiceImpl;
 import lxf.incast.utils.RedisUtils;
 import redis.clients.jedis.BinaryClient.LIST_POSITION;
@@ -21,7 +23,7 @@ import redis.clients.jedis.BinaryClient.LIST_POSITION;
 public class RedisService {
 	
 	private RedisUtils redisUtils = new RedisUtils();
-	private RecordService recordService = new RedcordServiceImpl();
+	private RecordMybatisService recordService = new RecordMybatisServiceImpl();
 
 	/**
 	 * 缓存Record的集合数据

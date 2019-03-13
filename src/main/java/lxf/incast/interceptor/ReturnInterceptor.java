@@ -39,12 +39,15 @@ public class ReturnInterceptor implements HttpSessionListener {
 				address = InetAddress.getLocalHost();
 
 				String IP = address.getHostAddress();
+				System.out.println(IP);
 				// 获取当前的时间
-				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-				String time = dateFormat.format(new Date());
-				record.setRecord_IP(IP);
-				record.setRecord_Time(time);
-				recordService.RecordAdd(record);
+				if(IP != null){
+					SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+					String time = dateFormat.format(new Date());
+					record.setRecord_IP(IP);
+					record.setRecord_Time(time);
+					recordService.RecordAdd(record);
+				}
 				redisService.setRedis_Record();
 			} catch (Exception e) {
 				e.printStackTrace();

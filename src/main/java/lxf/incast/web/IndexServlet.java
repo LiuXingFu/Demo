@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import lxf.incast.entity.Record;
+import lxf.incast.redis.RedisService;
 import lxf.incast.service.RecordService;
 import lxf.incast.service.impl.RedcordServiceImpl;
 
@@ -20,12 +21,15 @@ import lxf.incast.service.impl.RedcordServiceImpl;
  */
 public class IndexServlet extends HttpServlet {
 
-	private RecordService recordService = new RedcordServiceImpl();
+	private RedisService redisService = new RedisService();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String index = "《《《欢迎来到本网站》》》";
-		List<Record> record_list = recordService.RecordAll();
+		/**
+		 * 更改为redisService
+		 */
+		List<Record> record_list = redisService.getRedis_Record();
 		request.setAttribute("index", index);
 		request.setAttribute("record_list", record_list);
 		request.getRequestDispatcher("WEB-INF/view/index.jsp").forward(request, response);

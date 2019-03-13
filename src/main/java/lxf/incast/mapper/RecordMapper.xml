@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 命名空间 -->
+<mapper namespace="lxf.incast.dao.RecordMybatisDao">
+	<!-- 添加记录 -->
+	<insert id="RecordAdd" parameterType="record">
+		INSERT INTO record_demo (record_IP,record_Time) VALUE(#{record_IP},#{record_Time})
+	</insert>
+	
+	<!-- 查询所有记录 -->
+	<select id="RecordAll" resultType="record">
+		SELECT * FROM record_demo
+	</select>
+</mapper>
+
