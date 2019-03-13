@@ -42,6 +42,7 @@ public class TestMysql {
 		//接收Statement对象
 		statement =  MysqlUtils.ReturnStatement();
 		//sql
+		
 		String sql = "insert into record_Demo(record_IP,record_Time) values('测试','测试')";
 		int num = statement.executeUpdate(sql);
 		System.out.println("影响行数："+num);
