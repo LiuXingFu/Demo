@@ -9,6 +9,7 @@
 
 	<dependencies>
 
+		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -16,6 +17,36 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!-- mysql-jdbc -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.0.8</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.32</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.4.1</version>
+		</dependency>
 	</dependencies>
 
 </project>

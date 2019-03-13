@@ -37,9 +37,7 @@ public class ReturnInterceptor implements HttpSessionListener {
 				// 获取用户的IP
 				InetAddress address = null;
 				address = InetAddress.getLocalHost();
-
 				String IP = address.getHostAddress();
-				System.out.println(IP);
 				// 获取当前的时间
 				if(IP != null){
 					SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
