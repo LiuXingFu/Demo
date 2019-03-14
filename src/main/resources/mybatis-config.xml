@@ -7,6 +7,10 @@
 <configuration>
 	<!-- 加载jdbc.properties数据库相关文件 -->
 	<properties resource="jdbc.properties" />
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+		<setting name="autoMappingBehavior" value="FULL"/>
+	</settings>
 	<typeAliases>
 		<typeAlias type="lxf.incast.entity.Record" alias="record"/>
 	</typeAliases>
