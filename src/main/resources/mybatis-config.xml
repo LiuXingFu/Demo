@@ -33,5 +33,6 @@
 	<!-- mappers告诉Mybatis去哪里找相关映射 -->
 	<mappers>
 		<mapper resource="lxf/incast/mapper/RecordMapper.xml"/>
+		<mapper resource="lxf/incast/mapper/GradeTableMapper.xml"/>
 	</mappers>
 </configuration>
