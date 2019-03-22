@@ -8,5 +8,6 @@
 	<select id="getGradeTableList" resultType="lxf.incast.entity.GradeTable">
 		SELECT * FROM gradetable
 	</select>
+	
 </mapper>
 
