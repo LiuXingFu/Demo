@@ -25,7 +25,7 @@
 		<th>形式与政策(4)</th>
 		<th>演讲与口才</th>
 	</tr>
-<c:forEach items="${gradeTable_list }" var="gradetable" varStatus="gra">
+<c:forEach items="${pageBean.data }" var="gradetable" varStatus="gra">
 	<tr>
 		<td>${gradetable.student_ID }</td>
 		<td>${gradetable.student_Name }</td>
@@ -43,6 +43,16 @@
 		<td>${gradetable.speechAndEloquence }</td>
 	</tr>
 </c:forEach>
+	<tr align="center">
+		<td colspan="14">
+			<a href="${pageContext.request.contextPath }/gradeTableServlet?currentPage=${pageBean.firstPage}">首页</a>&nbsp;
+			<a href="${pageContext.request.contextPath }/gradeTableServlet?currentPage=${pageBean.prePage}">上一页</a>&nbsp;
+			<a href="${pageContext.request.contextPath }/gradeTableServlet?currentPage=${pageBean.nextPage}">下一页</a>&nbsp;
+			<a href="${pageContext.request.contextPath }/gradeTableServlet?currentPage=${pageBean.totalPage}">末页</a>&nbsp;
+			当前为第${pageBean.currentPage }页/共${pageBean.totalPage }页&nbsp;
+			共${pageBean.totalCount } 条数据&nbsp;每页显示${pageBean.pageSize }条
+		</td>
+	</tr>
 </table>
 </body>
 </html>
