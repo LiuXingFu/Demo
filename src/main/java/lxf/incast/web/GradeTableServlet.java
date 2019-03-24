@@ -42,6 +42,7 @@ public class GradeTableServlet extends HttpServlet {
 	
 	private void t1(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		//1)封装PageBean对象
 		PageBean pageBean = new PageBean();
 		//1.1 当前页数据

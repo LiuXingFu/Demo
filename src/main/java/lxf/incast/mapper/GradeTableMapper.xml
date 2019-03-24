@@ -9,5 +9,10 @@
 		SELECT * FROM gradetable
 	</select>
 	
+	<!-- 根据姓名查询 -->
+	<select id="getGradeTableUserName" parameterType="string" resultType="lxf.incast.entity.GradeTable">
+		SELECT * FROM gradetable WHERE student_Name = #{userName}
+	</select>
+	
 </mapper>
 

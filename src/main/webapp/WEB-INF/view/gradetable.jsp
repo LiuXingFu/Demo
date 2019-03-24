@@ -9,7 +9,15 @@
 </head>
 <body>
 <table align="center" border="1">
-	<tr>
+	<tr align="center">
+		<td colspan="14">
+			<form action="${pageContext.request.contextPath }/gradeTableCondition" method="post">
+				姓名：<input type="text" name="userName">&nbsp;
+				<input type="submit" value="查询">
+			</form>
+		</td>
+	</tr>
+	<tr align="center">
 		<th>学号</th>
 		<th>姓名</th>
 		<th>课程门数</th>

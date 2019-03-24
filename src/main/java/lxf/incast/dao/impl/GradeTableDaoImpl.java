@@ -28,4 +28,13 @@ public class GradeTableDaoImpl implements GradeTableDao {
 		return gradeTableDao.getGradeTableList();
 	}
 
+	/*
+	 * 根据姓名查询(non-Javadoc)
+	 * @see lxf.incast.dao.GradeTableDao#getGradeTableName(java.lang.String)
+	 */
+	public GradeTable getGradeTableUserName(String userName) {
+		
+		return gradeTableDao.getGradeTableUserName(userName);
+	}
+
 }

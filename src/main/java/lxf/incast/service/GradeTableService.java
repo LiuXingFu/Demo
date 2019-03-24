@@ -13,4 +13,7 @@ import lxf.incast.entity.GradeTable;
 public interface GradeTableService {
 	//查询所有成绩
 	public List<GradeTable> getGradeTableList();
+	
+	//根据姓名查询
+	public GradeTable getGradeTableUserName(String userName);
 }

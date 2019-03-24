@@ -45,5 +45,14 @@ public class GradeTableServiceImpl implements GradeTableService {
 			return gradeTables_list;
 		}
 	}
+
+	/*
+	 * 根据姓名查询(non-Javadoc)
+	 * @see lxf.incast.service.GradeTableService#getGradeTableUserName(java.lang.String)
+	 */
+	public GradeTable getGradeTableUserName(String userName) {
+		
+		return gradeTableDao.getGradeTableUserName(userName);
+	}
 	
 }
