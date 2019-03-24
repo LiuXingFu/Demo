@@ -21,14 +21,14 @@ public class RedisUtils {
 	/*
 	 * 缓存数据
 	 */
-	public void set(String key, String value) {
+	public static void set(String key, String value) {
 		jedis.set(key, value);
 	}
 	
 	/*
 	 * 获取数据
 	 */
-	public String get(String key) {
+	public static String get(String key) {
 		return jedis.get(key);
 	}
 }
