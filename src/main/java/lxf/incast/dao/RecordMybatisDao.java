@@ -2,6 +2,8 @@ package lxf.incast.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import lxf.incast.entity.Record;
 
 /**
@@ -11,6 +13,7 @@ import lxf.incast.entity.Record;
  * 
  * @date 2019年3月13日 上午11:58:04
  */
+@Repository
 public interface RecordMybatisDao {
 	// 查询所有的访问数据
 	public List<Record> RecordAll();

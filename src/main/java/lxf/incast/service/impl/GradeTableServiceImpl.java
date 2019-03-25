@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.swing.LayoutStyle;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.alibaba.fastjson.JSON;
 
 import lxf.incast.dao.GradeTableDao;
@@ -19,9 +22,11 @@ import lxf.incast.utils.RedisUtils;
  * 
  * @date 2019年3月22日 下午9:39:10
  */
+@Service
 public class GradeTableServiceImpl implements GradeTableService {
 
-	private GradeTableDao gradeTableDao = new GradeTableDaoImpl();
+	@Autowired
+	private GradeTableDaoImpl gradeTableDao;
 	
 	/*
 	 * 查询全部成绩(non-Javadoc)

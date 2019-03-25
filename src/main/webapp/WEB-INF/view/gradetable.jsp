@@ -11,7 +11,7 @@
 <table align="center" border="1">
 	<tr align="center">
 		<td colspan="14">
-			<form action="${pageContext.request.contextPath }/gradeTableCondition" method="post">
+			<form action="${pageContext.request.contextPath }/gradeTableName" method="post">
 				姓名：<input type="text" name="userName">&nbsp;
 				<input type="submit" value="查询">
 			</form>
@@ -53,10 +53,10 @@
 </c:forEach>
 	<tr align="center">
 		<td colspan="14">
-			<a href="${pageContext.request.contextPath }/gradeTableServlet?currentPage=${pageBean.firstPage}">首页</a>&nbsp;
-			<a href="${pageContext.request.contextPath }/gradeTableServlet?currentPage=${pageBean.prePage}">上一页</a>&nbsp;
-			<a href="${pageContext.request.contextPath }/gradeTableServlet?currentPage=${pageBean.nextPage}">下一页</a>&nbsp;
-			<a href="${pageContext.request.contextPath }/gradeTableServlet?currentPage=${pageBean.totalPage}">末页</a>&nbsp;
+			<a href="${pageContext.request.contextPath }/gradeTableList?currentPage=${pageBean.firstPage}">首页</a>&nbsp;
+			<a href="${pageContext.request.contextPath }/gradeTableList?currentPage=${pageBean.prePage}">上一页</a>&nbsp;
+			<a href="${pageContext.request.contextPath }/gradeTableList?currentPage=${pageBean.nextPage}">下一页</a>&nbsp;
+			<a href="${pageContext.request.contextPath }/gradeTableList?currentPage=${pageBean.totalPage}">末页</a>&nbsp;
 			当前为第${pageBean.currentPage }页/共${pageBean.totalPage }页&nbsp;
 			共${pageBean.totalCount } 条数据&nbsp;每页显示${pageBean.pageSize }条
 		</td>

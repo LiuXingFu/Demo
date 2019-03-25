@@ -5,12 +5,12 @@
 <!-- 命名空间 -->
 <mapper namespace="lxf.incast.dao.GradeTableDao">
 	<!-- 查询全部成绩 -->
-	<select id="getGradeTableList" resultType="lxf.incast.entity.GradeTable">
+	<select id="getGradeTableList" resultType="gradeTable">
 		SELECT * FROM gradetable
 	</select>
 	
 	<!-- 根据姓名查询 -->
-	<select id="getGradeTableUserName" parameterType="string" resultType="lxf.incast.entity.GradeTable">
+	<select id="getGradeTableUserName" parameterType="string" resultType="gradeTable">
 		SELECT * FROM gradetable WHERE student_Name = #{userName}
 	</select>
 	

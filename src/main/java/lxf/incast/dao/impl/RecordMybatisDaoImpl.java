@@ -3,6 +3,9 @@ package lxf.incast.dao.impl;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import lxf.incast.dao.RecordMybatisDao;
 import lxf.incast.entity.Record;
 import lxf.incast.utils.SqlSessionFactorUtils;
@@ -14,10 +17,11 @@ import lxf.incast.utils.SqlSessionFactorUtils;
  * 
  * @date 2019年3月13日 上午11:59:50
  */
+@Service
 public class RecordMybatisDaoImpl implements RecordMybatisDao {
 	
-	private static SqlSession session = SqlSessionFactorUtils.getSqlSession();
-	private static RecordMybatisDao mybatisDao = session.getMapper(RecordMybatisDao.class);
+	@Autowired
+	private RecordMybatisDao mybatisDao;
 	
 	/*
 	 * 查询所有记录

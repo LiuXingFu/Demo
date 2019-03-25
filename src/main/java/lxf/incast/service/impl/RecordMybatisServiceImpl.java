@@ -2,6 +2,9 @@ package lxf.incast.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import lxf.incast.dao.RecordMybatisDao;
 import lxf.incast.dao.impl.RecordMybatisDaoImpl;
 import lxf.incast.entity.Record;
@@ -14,9 +17,11 @@ import lxf.incast.service.RecordMybatisService;
  * 
  * @date 2019年3月13日 下午12:30:13
  */
+@Service
 public class RecordMybatisServiceImpl implements RecordMybatisService {
 
-	private static RecordMybatisDao mybatisDao = new RecordMybatisDaoImpl();
+	@Autowired
+	private RecordMybatisDaoImpl mybatisDao;
 	
 	/*
 	 * 查询所有访问数据(non-Javadoc)

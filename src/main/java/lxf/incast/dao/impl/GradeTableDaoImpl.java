@@ -3,6 +3,8 @@ package lxf.incast.dao.impl;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import lxf.incast.dao.GradeTableDao;
 import lxf.incast.entity.GradeTable;
@@ -14,10 +16,11 @@ import lxf.incast.utils.SqlSessionFactorUtils;
  * 
  * @date 2019年3月22日 下午9:32:07
  */
+@Service
 public class GradeTableDaoImpl implements GradeTableDao {
 	
-	private static SqlSession session = SqlSessionFactorUtils.getSqlSession();
-	private static GradeTableDao gradeTableDao = session.getMapper(GradeTableDao.class);
+	@Autowired
+	private GradeTableDao gradeTableDao;
 
 	/*
 	 * 查询所有成绩(non-Javadoc)

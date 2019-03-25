@@ -1,9 +1,8 @@
-package lxf.incast.web;
+package lxf.incast.controller;
 
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +17,6 @@ import lxf.incast.service.impl.GradeTableServiceImpl;
  * 
  * @date 2019年3月24日 下午3:53:00
  */
-@WebServlet("/gradeTableCondition")
 public class GradeTableCondition extends HttpServlet {
 	
 	private GradeTableService gradeTableService = new GradeTableServiceImpl();

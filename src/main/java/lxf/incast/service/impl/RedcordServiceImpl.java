@@ -1,6 +1,10 @@
 package lxf.incast.service.impl;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import lxf.incast.dao.RecordDao;
 import lxf.incast.dao.impl.RecordDaoImpl;
 import lxf.incast.entity.Record;
@@ -13,9 +17,12 @@ import lxf.incast.service.RecordService;
  * 
  * @date 2019年3月6日 下午9:47:54
  */
+@Service
 public class RedcordServiceImpl implements RecordService {
 
-	private RecordDao recordDao = new RecordDaoImpl();
+	@Autowired
+	private RecordDaoImpl recordDao;
+	
 
 	/**
 	 * 查询所有访问数据

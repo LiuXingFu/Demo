@@ -2,6 +2,8 @@ package lxf.incast.dao;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import lxf.incast.entity.Record;
 
 /**
@@ -11,6 +13,7 @@ import lxf.incast.entity.Record;
  * 
  * @date 2019年3月6日 下午8:53:27
  */
+@RequestMapping
 public interface RecordDao {
 	// 查询所有的访问数据
 	public List<Record> RecordAll();

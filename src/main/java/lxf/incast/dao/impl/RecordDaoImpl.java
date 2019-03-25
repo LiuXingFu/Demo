@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import lxf.incast.dao.RecordDao;
 import lxf.incast.entity.Record;
 import lxf.incast.utils.MysqlUtils;
@@ -16,6 +19,7 @@ import lxf.incast.utils.MysqlUtils;
  * 
  * @date 2019年3月6日 下午8:59:59
  */
+@Service
 public class RecordDaoImpl implements RecordDao {
 
 	/**

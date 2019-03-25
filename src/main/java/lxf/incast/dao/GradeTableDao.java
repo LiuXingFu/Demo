@@ -2,6 +2,8 @@ package lxf.incast.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import lxf.incast.entity.GradeTable;
 
 /**
@@ -11,6 +13,7 @@ import lxf.incast.entity.GradeTable;
  * 
  * @date 2019年3月22日 下午9:30:15
  */
+@Repository
 public interface GradeTableDao {
 	// 查询所有成绩
 	public List<GradeTable> getGradeTableList();
