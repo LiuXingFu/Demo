@@ -1,0 +1,54 @@
+* {
+	margin: 0;
+	padding: 0;
+} /*清除网页自带的边距*/
+ul, li {
+	list-style: none;
+} /*清除小黑点*/
+body {
+	width: 100%;
+	height: 100%;
+	background-image: url(/Demo/img/bg.jpg);
+}
+
+.con_box {
+	width: 810px;
+	height: 291px;
+	margin: 15% auto 0; /*--控制DIV的位置 上边距 左右边距 下边距--*/
+	background: rgba(255, 255, 255, 0.3); /*--为DIV加上透明度--*/
+	padding: 10px; /*让DIV里的内容离边距10px*/
+}
+
+.con_box li {
+	width: 260px;
+	height: 140px;
+	overflow: hidden; /*超出DIV视距的都不显示*/
+	position: relative; /*相对定位*/
+	float: left; /*右边靠齐*/
+	margin: 0 10px 10px 0px; /*设置图片的距离左 右 上 下*/
+}
+
+.con_box a {
+	text-decoration: none; /*去出超链接自带样式*/
+	color: #ddd;
+}
+
+.con_box p.text {
+	width: 260px;
+	height: 30px;
+	color: #000000;
+	text-align: center; /*文字居中*/
+	line-height: 30px; /*行高垂直*/
+	background: rgba(255, 255, 255, 0.3);
+	position: absolute; /*绝对定位*/
+	bottom: -30px;
+	left: 0; /*左边距离为0*/
+	transition: all 0.3s ease;
+}
+/*鼠标经过的效果*/
+.con_box li:hover .text {
+	bottom: 0;
+} /*鼠标放上 里边框0px*/
+.con_box a:hover .img {
+	transform: scale(1.1);
+} /*鼠标放上 放大1.1 倍*/

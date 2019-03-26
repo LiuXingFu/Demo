@@ -14,7 +14,7 @@ import lxf.incast.entity.GradeTable;
 import lxf.incast.service.impl.GradeTableServiceImpl;
 
 /**
- * 成绩展示成
+ * 1610成绩展示成
  * @author 我有一个小梦想
  * 
  * @date 2019年3月25日 下午3:49:43
@@ -60,13 +60,19 @@ public class GradeTableController {
 
 		//2)把PageBean对象放入域对象中
 		request.setAttribute("pageBean", pageBean);
-		return "gradetable";
+		return "gradetable/gradetable";
 	}
 	
+	/**
+	 * 根据姓名查询成绩
+	 * @param request
+	 * @param userName
+	 * @return
+	 */
 	@RequestMapping("/gradeTableName")
 	public String gradeTableName(HttpServletRequest request, String userName) {
 		GradeTable gradeTable = gradeTableService.getGradeTableUserName(userName);
 		request.setAttribute("gradeTable", gradeTable);
-		return "GradeTable_Condition";
+		return "gradetable/GradeTable_Condition";
 	}
 }
