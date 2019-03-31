@@ -25,6 +25,7 @@
 	<typeAliases>
 		<typeAlias type="lxf.incast.entity.Record" alias="record"/>
 		<typeAlias type="lxf.incast.entity.GradeTable" alias="gradeTable"/>
+		<typeAlias type="lxf.incast.entity.User" alias="user"/>
 	</typeAliases>
 	<!-- <environments default="mysql">
 		环境配置，链接的数据库
@@ -46,5 +47,6 @@
 	<mappers>
 		<mapper resource="lxf/incast/mapper/RecordMapper.xml"/>
 		<mapper resource="lxf/incast/mapper/GradeTableMapper.xml"/>
+		<mapper resource="lxf/incast/mapper/UserMapper.xml"/>
 	</mappers>
 </configuration>

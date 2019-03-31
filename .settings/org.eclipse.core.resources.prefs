@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/java/lxf/incast/entity/Molecule.java=UTF-8
+encoding//src/main/java/lxf/incast/utils/ValidateCodeUtil.java=UTF-8
 encoding//src/main/webapp/WEB-INF/view/molecule.jsp=UTF-8
 encoding/<project>=UTF-8

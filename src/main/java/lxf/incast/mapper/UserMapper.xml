@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间 -->
+<mapper namespace="lxf.incast.dao.UserDao">
+	<!-- 注册 -->
+	<insert id="register" parameterType="user">
+		INSERT INTO demo_User(demo_User,demo_Password,demo_Name,demo_Sex,demo_Email,demo_Address,demo_Explain)
+		VALUE(#{demo_User}, #{demo_Password}, #{demo_Name}, #{demo_Sex}, #{demo_Email}, #{demo_Address}, #{demo_Explain})
+	</insert>
+	
+	<!-- 登录 -->
+	<select id="login" parameterType="user" resultType="user">
+		SELECT * FROM demo_User 
+		WHERE demo_Name = #{demo_Name } AND demo_Password = #{demo_Password };
+	</select>
+</mapper>

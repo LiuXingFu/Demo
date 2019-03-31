@@ -10,10 +10,11 @@
 
 </head>
 <body>
+当前用户：<a href="/Demo/user/detail">${user.demo_Name }</a> &nbsp; ${error }
 	<div class="con_box">
 		<ul>
-			<li><a href=""> <img alt="" src="/Demo/img/test.jpg">
-					<p class="text">敬请期待...</p>
+			<li><a href="/Demo/user/index"> <img alt="" src="/Demo/img/user_index.jpg">
+					<p class="text">用户登录注册</p>
 			</a></li>
 			<li><a href="/Demo/gradeTableList"> <img alt=""
 					src="/Demo/img/gradetable.jpg">
