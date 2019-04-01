@@ -8,7 +8,7 @@ package lxf.incast.entity;
  */
 public class User {
 	private Integer demo_ID; //ID
-	private String demo_User; //账号
+	private Integer demo_User; //账号
 	private String demo_Password; //密码
 	private String demo_Name; //用户名
 	private String demo_Sex; //性别
@@ -21,10 +21,10 @@ public class User {
 	public void setDemo_ID(Integer demo_ID) {
 		this.demo_ID = demo_ID;
 	}
-	public String getDemo_User() {
+	public Integer getDemo_User() {
 		return demo_User;
 	}
-	public void setDemo_User(String demo_User) {
+	public void setDemo_User(Integer demo_User) {
 		this.demo_User = demo_User;
 	}
 	public String getDemo_Password() {

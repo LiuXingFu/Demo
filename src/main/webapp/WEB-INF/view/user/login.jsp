@@ -22,7 +22,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th>验证码<img src="http://localhost:8089/Demo/imgCode" /></th>
+				<th>验证码<img src="http://localhost/Demo/imgCode" /></th>
 				<td>
 					<input type="text" name="code"/>
 				</td>

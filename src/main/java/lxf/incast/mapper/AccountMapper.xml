@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="lxf.incast.dao.AccountDao">
+	<!-- 获取账号（查出的值加1） -->
+	<select id="accountUserQuery" resultType="int">
+		SELECT account+1 FROM account
+	</select>
+	
+	<!-- 更新数据库账号值 -->
+	<update id="accountUserUpdate" parameterType="int">
+		Update account SET account = #{accountUser}
+	</update>
+</mapper>

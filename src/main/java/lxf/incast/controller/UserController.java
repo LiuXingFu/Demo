@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import lxf.incast.entity.User;
 import lxf.incast.service.impl.UserServiceImpl;
+import lxf.incast.utils.AccountUserUtils;
 
 /**
  * 用户展示层
@@ -22,6 +23,8 @@ public class UserController {
 
 	@Autowired
 	private UserServiceImpl userServiceImpl;
+	@Autowired
+	private AccountUserUtils accountUserUtils;
 
 	@RequestMapping("user/detail")
 	public String detail() {
@@ -36,7 +39,10 @@ public class UserController {
 	 */
 	@RequestMapping("user_register")
 	public String register(User user) {
+		user.setDemo_User(accountUserUtils.accountUserQuery());
 		userServiceImpl.register(user);
+		accountUserUtils.accountUserUpdate(user.getDemo_User());
+		System.out.println(user);
 		return "redirect:index";
 	}
 	

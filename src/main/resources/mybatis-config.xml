@@ -48,5 +48,6 @@
 		<mapper resource="lxf/incast/mapper/RecordMapper.xml"/>
 		<mapper resource="lxf/incast/mapper/GradeTableMapper.xml"/>
 		<mapper resource="lxf/incast/mapper/UserMapper.xml"/>
+		<mapper resource="lxf/incast/mapper/AccountMapper.xml"/>
 	</mappers>
 </configuration>
