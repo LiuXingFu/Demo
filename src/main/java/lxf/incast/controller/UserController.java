@@ -61,9 +61,17 @@ public class UserController {
 				session.setAttribute("user", user_Name);
 			} else {
 				request.setAttribute("error", "用户名或密码错误请从新登录...！");
+				return "error";
 			}
 		}
-		return "redirect:index";
+		return "redirect:demo_login";
+	}
+	
+	@RequestMapping("/exit")
+	public String exit(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("user");
+		return "login";
 	}
 
 }

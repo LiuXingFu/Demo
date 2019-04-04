@@ -32,12 +32,22 @@ public class IndexController {
 	 * Demo首页
 	 * @return
 	 */
+	@RequestMapping("/demo")
+	public String demo() {
+		
+		return "demo";
+	}
+	@RequestMapping("/demo_login")
+	public String demo_login() {
+		
+		return "login";
+	}
+	
 	@RequestMapping("/index")
 	public String index() {
 		
 		return "index/index";
 	}
-	
 	/**
 	 * 用户登录注册首页
 	 * @return
@@ -69,8 +79,16 @@ public class IndexController {
 		return "user/login";
 	}
 	
+	/**
+	 * 验证码
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws IOException
+	 */
 	@RequestMapping("/imgCode")
-	public String ImgLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public String ImgLogin(HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
 		HttpSession session = request.getSession();
 		OutputStream out = response.getOutputStream();
 		String code = ValidateCodeUtil.genNewCode(out);

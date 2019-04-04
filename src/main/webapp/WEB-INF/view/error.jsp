@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/Demo/register">注册</a><br>
-<a href="/Demo/login">登录</a>
+${error }
 </body>
 </html>

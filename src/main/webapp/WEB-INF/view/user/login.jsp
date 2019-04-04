@@ -7,7 +7,7 @@
 <title>Demo__用户登录</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/user_login" method="post">
+	<form action="${pageContext.request.contextPath }/user_login" method="post" target="demo_top">
 		<table align="center" border="1">
 			<tr>
 				<th>用户名</th>
