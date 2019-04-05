@@ -22,10 +22,14 @@
 		<!-- 配置超时时间，他决定驱动等待一个数据库响应的时间 -->
 		<setting name="defaultStatementTimeout" value="25000"/>
 	</settings>
+	
+	<!-- 别名 -->
 	<typeAliases>
 		<typeAlias type="lxf.incast.entity.Record" alias="record"/>
 		<typeAlias type="lxf.incast.entity.GradeTable" alias="gradeTable"/>
 		<typeAlias type="lxf.incast.entity.User" alias="user"/>
+		<typeAlias type="lxf.incast.entity.University_Town_2016" alias="university"/>
+		<typeAlias type="lxf.incast.entity.Teachers" alias="teachers"/>
 	</typeAliases>
 	<!-- <environments default="mysql">
 		环境配置，链接的数据库
@@ -49,5 +53,6 @@
 		<mapper resource="lxf/incast/mapper/GradeTableMapper.xml"/>
 		<mapper resource="lxf/incast/mapper/UserMapper.xml"/>
 		<mapper resource="lxf/incast/mapper/AccountMapper.xml"/>
+		<mapper resource="lxf/incast/mapper/Teachers_university.xml"/>
 	</mappers>
 </configuration>

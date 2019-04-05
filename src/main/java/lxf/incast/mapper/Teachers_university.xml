@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间 -->
+<mapper namespace="lxf.incast.dao.TeachersUniversityDao">
+
+	<resultMap type="teachers" id="teachersMap">
+		<id column="teachers_ID" property="teachers_ID" />
+		<result column="teachers_Name" property="teachers_Name" />
+		<!-- collection定义关联结合类型的属性的封装规则 ofType:指定集合里面的元素的类型 -->
+		<collection property="town_2016_List" ofType="university">
+			<!-- 定义这个集合中元素的封装规则 -->
+			<id column="student_Name" property="student_Name" />
+			<result column="theClass" property="theClass" />
+			<result column="account" property="account" />
+			<result column="student_Password" property="student_Password" />
+		</collection>
+	</resultMap>
+
+	<select id="getTeachersList" resultMap="teachersMap">
+		SELECT
+			t.teachers_ID,
+			t.teachers_Name,
+			u.student_Name,
+			u.theClass,
+			u.account,
+			u.student_Password
+		FROM
+			t_teachers t
+		LEFT JOIN 
+			university_town_2016 u 
+		ON 
+			t.teachers_ID = u.teachers_ID;
+	</select>
+
+</mapper>

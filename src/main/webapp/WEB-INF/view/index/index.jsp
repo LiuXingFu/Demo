@@ -19,8 +19,8 @@
 					src="/Demo/img/gradetable.jpg">
 					<p class="text">1610成绩单</p>
 			</a></li>
-			<li><a href=""> <img alt="" src="/Demo/img/test.jpg">
-					<p class="text">敬请期待...</p>
+			<li><a href="/Demo/teachers"> <img alt="" src="/Demo/img/mybatis.jpg">
+					<p class="text">MyBatis一对多</p>
 			</a></li>
 			<li><a href=""> <img alt="" src="/Demo/img/test.jpg">
 					<p class="text">敬请期待...</p>

@@ -10,10 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import lxf.incast.dao.impl.TeachersUniversityDaoImpl;
 import lxf.incast.entity.Record;
+import lxf.incast.entity.Teachers;
+import lxf.incast.entity.University_Town_2016;
 import lxf.incast.redis.RedisService;
 import lxf.incast.service.RecordService;
 import lxf.incast.service.impl.RedcordServiceImpl;
@@ -34,7 +38,7 @@ public class IndexController {
 	 */
 	@RequestMapping("/demo")
 	public String demo() {
-		
+	
 		return "demo";
 	}
 	@RequestMapping("/demo_login")
