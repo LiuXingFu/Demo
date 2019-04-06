@@ -5,6 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Demo__用户注册</title>
+
+<script type="text/javascript">
+	function validate() {
+		var p1 = document.getElementById("password").value;
+		var p2 = document.getElementById("testpassword").value;
+		if (p1 != p2) {
+			alert("输入的两次密码不一致！");
+			return false;
+		}
+	}
+</script>
+
 </head>
 <body>
 	
@@ -16,11 +28,11 @@
 			</tr>
 			<tr>
 				<th>输入密码</th>
-				<td><input type="text" name="demo_Password" /></td>
+				<td><input type="password" id="password"/></td>
 			</tr>
 			<tr>
 				<th>确定密码</th>
-				<td><input type="text" name="demo_Password" /></td>
+				<td><input type="password" name="demo_Password" id="testpassword" /></td>
 			</tr>
 			<tr>
 				<th>性别</th>
@@ -40,7 +52,7 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input type="submit" value="注册" />
+					<input type="submit" value="注册" onclick="return validate()" />
 				</td>
 			</tr>
 		</table>
