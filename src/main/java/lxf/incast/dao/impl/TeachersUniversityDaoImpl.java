@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import lxf.incast.dao.TeachersUniversityDao;
 import lxf.incast.entity.Teachers;
@@ -24,6 +26,7 @@ public class TeachersUniversityDaoImpl implements TeachersUniversityDao {
 	 * 查询指导老师管理的学生(non-Javadoc)
 	 * @see lxf.incast.dao.TeachersUniversityDao#getTeachersList()
 	 */
+	@Transactional(propagation = Propagation.SUPPORTS)
 	public List<Teachers> getTeachersList() {
 		
 		return universityDao.getTeachersList();

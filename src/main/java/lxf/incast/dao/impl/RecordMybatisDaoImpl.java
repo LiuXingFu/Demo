@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import lxf.incast.dao.RecordMybatisDao;
 import lxf.incast.entity.Record;
@@ -27,6 +29,7 @@ public class RecordMybatisDaoImpl implements RecordMybatisDao {
 	 * 查询所有记录
 	 * @see lxf.incast.dao.RecordMybatisDao#RecordAll()
 	 */
+	@Transactional(propagation = Propagation.SUPPORTS)
 	public List<Record> RecordAll() {
 		List<Record> RecordList = mybatisDao.RecordAll();
 		return RecordList;
@@ -36,6 +39,7 @@ public class RecordMybatisDaoImpl implements RecordMybatisDao {
 	 * 新增数据
 	 * @see lxf.incast.dao.RecordMybatisDao#RecordAdd(lxf.incast.entity.Record)
 	 */
+	@Transactional(propagation = Propagation.REQUIRED)
 	public void RecordAdd(Record record) {
 		mybatisDao.RecordAdd(record);
 	}

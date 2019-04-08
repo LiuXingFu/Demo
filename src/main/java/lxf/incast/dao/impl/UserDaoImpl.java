@@ -2,6 +2,8 @@ package lxf.incast.dao.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import lxf.incast.dao.UserDao;
 import lxf.incast.entity.User;
@@ -21,6 +23,7 @@ public class UserDaoImpl implements UserDao {
 	/**
 	 * 注册
 	 */
+	@Transactional(propagation = Propagation.REQUIRED)
 	public void register(User user) {
 		
 		userDao.register(user);
@@ -30,6 +33,7 @@ public class UserDaoImpl implements UserDao {
 	 * 登录
 	 * @return
 	 */
+	@Transactional(propagation = Propagation.SUPPORTS)
 	public User login(User user) {
 		
 		return userDao.login(user);
