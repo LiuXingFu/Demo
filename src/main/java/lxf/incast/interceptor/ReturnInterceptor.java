@@ -46,7 +46,7 @@ public class ReturnInterceptor implements HttpSessionListener {
 					record.setRecord_Time(time);
 					recordService.RecordAdd(record);
 				}
-				redisService.setRedis_Record();
+				//redisService.setRedis_Record();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

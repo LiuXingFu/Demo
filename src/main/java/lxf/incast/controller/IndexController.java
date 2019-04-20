@@ -21,6 +21,7 @@ import lxf.incast.entity.University_Town_2016;
 import lxf.incast.redis.RedisService;
 import lxf.incast.service.RecordService;
 import lxf.incast.service.impl.RedcordServiceImpl;
+import lxf.incast.utils.AccountUserUtils;
 import lxf.incast.utils.ValidateCodeUtil;
 
 /**
@@ -32,6 +33,9 @@ import lxf.incast.utils.ValidateCodeUtil;
 @Controller
 public class IndexController {
 
+	@Autowired
+	private AccountUserUtils accountUserUtils;
+	
 	/**
 	 * Demo首页
 	 * @return
@@ -67,8 +71,9 @@ public class IndexController {
 	 * @return
 	 */
 	@RequestMapping("/register")
-	public String userRegister() {
-		
+	public String userRegister(HttpServletRequest request) {
+		int demo_User = accountUserUtils.accountUserQuery();
+		request.setAttribute("demo_User", demo_User);
 		return "user/register";
 	}
 	

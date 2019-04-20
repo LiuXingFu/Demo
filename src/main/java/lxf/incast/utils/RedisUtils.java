@@ -1,5 +1,9 @@
 package lxf.incast.utils;
 
+import java.util.List;
+
+import com.alibaba.fastjson.JSON;
+
 import redis.clients.jedis.Jedis;
 
 /**
@@ -21,14 +25,15 @@ public class RedisUtils {
 	/*
 	 * 缓存数据
 	 */
-	public static void set(String key, String value) {
-		jedis.set(key, value);
+	public static void set(String key, List value) {
+		jedis.set(key, JSON.toJSON(value).toString());
 	}
 	
 	/*
 	 * 获取数据
 	 */
-	public static String get(String key) {
-		return jedis.get(key);
+	public static List get(String key) {
+		
+		return JSON.parseArray(jedis.get(key));
 	}
 }

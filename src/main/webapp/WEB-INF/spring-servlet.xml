@@ -21,6 +21,19 @@
 		<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
 		<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
 		
+		<!-- 设置JSON格式为utf-8 -->
+		<mvc:annotation-driven>
+			<mvc:message-converters register-defaults="true">
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/html;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</mvc:message-converters>
+		</mvc:annotation-driven>
+		
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 			<property name="order" value="1"/>
 			<property name="prefix" value="/WEB-INF/view/"/>

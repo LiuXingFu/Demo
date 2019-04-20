@@ -38,8 +38,6 @@ public class GradeTableController {
 		List<GradeTable> list = new ArrayList<GradeTable>();
 		list = gradeTableService.getGradeTableList();
 		
-		System.out.println("-------------");
-		
 		//1.3 从用户参数中获取当前页数据(currentPage)
 		String currentPage = request.getParameter("currentPage");
 		if(currentPage==null || currentPage.equals("")){
@@ -51,11 +49,11 @@ public class GradeTableController {
 
 		pageBean.setCurrentPage(Integer.parseInt(currentPage));
 		
-		if((pageBean.getCurrentPage()-1)*pageBean.getPageSize()+pageBean.getPageSize() > pageBean.getTotalCount() ){
-			pageBean.setData(list.subList((pageBean.getCurrentPage()-1)*pageBean.getPageSize(), pageBean.getTotalCount()));
+		if((pageBean.getCurrentPage()-1) * pageBean.getPageSize() + pageBean.getPageSize() > pageBean.getTotalCount() ){
+			pageBean.setData(list.subList((pageBean.getCurrentPage()-1) * pageBean.getPageSize(), pageBean.getTotalCount()));
 		} else {
-			pageBean.setData(list.subList((pageBean.getCurrentPage()-1)*pageBean.getPageSize(),
-					(pageBean.getCurrentPage()-1)*pageBean.getPageSize()+pageBean.getPageSize()));
+			pageBean.setData(list.subList((pageBean.getCurrentPage()-1) * pageBean.getPageSize(),
+					(pageBean.getCurrentPage()-1) * pageBean.getPageSize() + pageBean.getPageSize()));
 		}
 
 		//2)把PageBean对象放入域对象中

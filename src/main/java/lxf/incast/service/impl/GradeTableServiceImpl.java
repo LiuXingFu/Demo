@@ -34,18 +34,16 @@ public class GradeTableServiceImpl implements GradeTableService {
 	 */
 	public List<GradeTable> getGradeTableList() {
 		List<GradeTable> gradeTables_list = new ArrayList<GradeTable>();
-		String gradeTables = RedisUtils.get("gradetable_list");
+		gradeTables_list = RedisUtils.get("gradetable_list");
 		//判断
-		if( gradeTables == null ){
+		if( gradeTables_list == null ){
 			//redis中没有缓存数据
 			gradeTables_list = gradeTableDao.getGradeTableList();
 			//将查出的数据缓存到redis
-			RedisUtils.set("gradetable_list", JSON.toJSON(gradeTables_list).toString());
+			RedisUtils.set("gradetable_list", gradeTables_list);
 			System.out.println("This is a Dao!");
 			return gradeTables_list;
 		} else {
-			//将json转成List集合
-			gradeTables_list = JSON.parseArray(gradeTables, GradeTable.class);
 			System.out.println("This is a Redis!");
 			return gradeTables_list;
 		}

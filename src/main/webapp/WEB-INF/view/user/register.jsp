@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Demo__用户注册</title>
-
+<script src="${pageContext.request.contextPath }/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	function validate() {
 		var p1 = document.getElementById("password").value;
@@ -16,6 +16,13 @@
 		}
 	}
 </script>
+<script>
+	$(document).ready(
+		function demo_user() {
+			$("#user_info").html('输入用户名');
+		}
+	);
+</script>
 
 </head>
 <body>
@@ -23,12 +30,18 @@
 	<form action="${pageContext.request.contextPath }/user_register" method="post">
 		<table align="center" border="1">
 			<tr>
+				<th>你的账号</th>
+				<td><input type="text" name="demo_User" value="${demo_User }" readonly="readonly"/></td>
+			</tr>
+			<tr>
 				<th>输入用户名</th>
-				<td><input type="text" name="demo_Name" /></td>
+				<td><input type="text" name="demo_Name" id="name" onclick="demo_user()" />
+				<span id="user_info"></span>
+				</td>
 			</tr>
 			<tr>
 				<th>输入密码</th>
-				<td><input type="password" id="password"/></td>
+				<td><input type="password" id="password" title="输入密码" id="password"/></td>
 			</tr>
 			<tr>
 				<th>确定密码</th>

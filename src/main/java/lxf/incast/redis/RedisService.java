@@ -22,28 +22,28 @@ import redis.clients.jedis.BinaryClient.LIST_POSITION;
  */
 public class RedisService {
 	
-	private RedisUtils redisUtils = new RedisUtils();
+/*	private RedisUtils redisUtils = new RedisUtils();
 	private RecordMybatisService recordService = new RecordMybatisServiceImpl();
 
-	/**
+	*//**
 	 * 缓存Record的集合数据
-	 */
+	 *//*
 	public void setRedis_Record() {
 		List<Record> list = recordService.RecordAll();
 		setRedis_Record(list);
 	}
-	/**
+	*//**
 	 * 缓存Record的集合数据
 	 * @param record_list record的list数据集合
-	 */
+	 *//*
 	public void setRedis_Record(List<Record> record_list) {
 		redisUtils.set("record_list", JSON.toJSON(record_list).toString());
 	}
 	
-	/**
+	*//**
 	 * 获取缓存
 	 * @return List<Record>
-	 */
+	 *//*
 	public List<Record> getRedis_Record(){
 		String key = redisUtils.get("record_list");
 		List<Record> list = new ArrayList<Record>();
@@ -61,7 +61,7 @@ public class RedisService {
 			list = JSON.parseArray(key, Record.class);
 			return list;
 		}
-	}
+	}*/
 }
 
 
