@@ -14,7 +14,7 @@
 body {
 	width: 100%;
 	height: 100%;
-	background-image: url(/Demo/img/bg.jpg);
+	background-color: ${sessionScope.user.demo_Color };
 }
 iframe {
 	width: 100%;

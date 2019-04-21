@@ -25,19 +25,32 @@
 	
 	<!-- 别名 -->
 	<typeAliases>
+		<!-- 访问信息 -->
 		<typeAlias type="lxf.incast.entity.Record" alias="record"/>
+		<!-- 1610成绩 -->
 		<typeAlias type="lxf.incast.entity.GradeTable" alias="gradeTable"/>
+		<!-- 用户 -->
 		<typeAlias type="lxf.incast.entity.User" alias="user"/>
+		<!-- 大学城信息 -->
 		<typeAlias type="lxf.incast.entity.University_Town_2016" alias="university"/>
+		<!-- 指导老师实体类 -->
 		<typeAlias type="lxf.incast.entity.Teachers" alias="teachers"/>
+		<!-- 用户(包含界面颜色) -->
+		<typeAlias type="lxf.incast.pojo.User_Color" alias="user_Color"/>
 	</typeAliases>
 	
 	<!-- mappers告诉Mybatis去哪里找相关映射 -->
 	<mappers>
+		<!-- 访问 -->
 		<mapper resource="lxf/incast/mapper/RecordMapper.xml"/>
+		<!-- 1610成绩 -->
 		<mapper resource="lxf/incast/mapper/GradeTableMapper.xml"/>
+		<!-- 用户 -->
 		<mapper resource="lxf/incast/mapper/UserMapper.xml"/>
+		<!-- 用户账号 -->
 		<mapper resource="lxf/incast/mapper/AccountMapper.xml"/>
+		<!-- 大学城信息 -->
 		<mapper resource="lxf/incast/mapper/Teachers_university.xml"/>
+		<!--  -->
 	</mappers>
 </configuration>

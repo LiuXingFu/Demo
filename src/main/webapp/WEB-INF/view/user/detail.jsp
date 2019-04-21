@@ -20,7 +20,7 @@
 		<tr>
 			<th>用户名</th>
 			<td>
-				${sessionScope.user.demo_Name }
+				<input type="text" name="" value="${sessionScope.user.demo_Name }"/>
 			</td>
 		</tr>
 		<tr>
@@ -46,6 +46,10 @@
 			<td>
 				${sessionScope.user.demo_Explain }
 			</td>
+		</tr>
+		<tr>
+			<th>界面颜色</th>
+			<td><input type="color" value="${sessionScope.user.demo_Color }"/></td>
 		</tr>
 	</table>
 </body>

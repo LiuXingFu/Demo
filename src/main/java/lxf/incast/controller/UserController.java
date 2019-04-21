@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lxf.incast.entity.User;
+import lxf.incast.pojo.User_Color;
 import lxf.incast.service.impl.UserServiceImpl;
 import lxf.incast.utils.AccountUserUtils;
 
@@ -38,9 +39,10 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("user_register")
-	public String register(User user) {
-		userServiceImpl.register(user);
-		accountUserUtils.accountUserUpdate(user.getDemo_User());
+	public String register(User_Color user_Color) {
+		userServiceImpl.register(user_Color);
+		System.out.println(user_Color);
+		accountUserUtils.accountUserUpdate(user_Color.getDemo_User());
 		return "redirect:index";
 	}
 	
@@ -49,8 +51,8 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("user_login")
-	public String login(HttpServletRequest request, User user, String code) {
-		User user_Name = userServiceImpl.login(user);
+	public String login(HttpServletRequest request, User_Color user_Color, String code) {
+		User_Color user_Name = userServiceImpl.login(user_Color);
 		HttpSession session = request.getSession();
 		String codes = request.getParameter("code");
 		String sCode = (String) request.getSession().getAttribute("sCode");
@@ -62,7 +64,7 @@ public class UserController {
 				return "error";
 			}
 		}
-		return "redirect:demo_login";
+		return "redirect:demo";
 	}
 	
 	@RequestMapping("/exit")

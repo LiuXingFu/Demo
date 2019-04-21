@@ -4,14 +4,17 @@
 <!-- 命名空间 -->
 <mapper namespace="lxf.incast.dao.UserDao">
 	<!-- 注册 -->
-	<insert id="register" parameterType="user">
-		INSERT INTO demo_User(demo_User,demo_Password,demo_Name,demo_Sex,demo_Email,demo_Address,demo_Explain)
-		VALUE(#{demo_User}, #{demo_Password}, #{demo_Name}, #{demo_Sex}, #{demo_Email}, #{demo_Address}, #{demo_Explain})
+	<insert id="register" parameterType="user_Color">
+		INSERT INTO demo_User(demo_User,demo_Password,demo_Name,demo_Sex,demo_Email,demo_Address,demo_Explain,demo_Color)
+		VALUE(#{demo_User}, #{demo_Password}, #{demo_Name}, #{demo_Sex}, #{demo_Email}, #{demo_Address}, #{demo_Explain}, 
+		#{demo_Color})
 	</insert>
 	
 	<!-- 登录 -->
-	<select id="login" parameterType="user" resultType="user">
+	<select id="login" parameterType="user_Color" resultType="user_Color">
 		SELECT * FROM demo_User 
 		WHERE demo_Name = #{demo_Name } AND demo_Password = #{demo_Password };
 	</select>
+	
+	<!--  -->
 </mapper>

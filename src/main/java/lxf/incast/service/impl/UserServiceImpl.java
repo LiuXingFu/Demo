@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import lxf.incast.dao.impl.UserDaoImpl;
 import lxf.incast.entity.User;
+import lxf.incast.pojo.User_Color;
 import lxf.incast.service.UserService;
 
 /**
@@ -22,17 +23,18 @@ public class UserServiceImpl implements UserService {
 	/**
 	 * 注册
 	 */
-	public void register(User user) {
+	public void register(User_Color user_Color) {
 		
-		userDaoImpl.register(user);
+		userDaoImpl.register(user_Color);
 	}
 
 	/**
 	 * 登录
 	 */
-	public User login(User user) {
+	public User_Color login(User_Color user_Color) {
 		
-		return userDaoImpl.login(user);
+		return userDaoImpl.login(user_Color);
 	}
+
 	
 }

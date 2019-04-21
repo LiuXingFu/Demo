@@ -1,6 +1,7 @@
 package lxf.incast.service;
 
 import lxf.incast.entity.User;
+import lxf.incast.pojo.User_Color;
 
 /**
  * 用户业务层接口
@@ -11,8 +12,8 @@ import lxf.incast.entity.User;
  */
 public interface UserService {
 	// 注册
-	public void register(User user);
+	public void register(User_Color user_Color);
 
 	// 登录
-	public User login(User user);
+	public User_Color login(User_Color user_Color);
 }

@@ -3,6 +3,7 @@ package lxf.incast.dao;
 import org.springframework.stereotype.Repository;
 
 import lxf.incast.entity.User;
+import lxf.incast.pojo.User_Color;
 
 /**
  * 用户持久层接口
@@ -13,7 +14,7 @@ import lxf.incast.entity.User;
 @Repository
 public interface UserDao {
 	//注册
-	public void register(User user);
+	public void register(User_Color user_Color);
 	//登录
-	public User login(User user);
+	public User_Color login(User_Color user_Color);
 }

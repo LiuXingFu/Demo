@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,28 +24,37 @@
 	);
 </script>
 
+<style type="text/css">
+	#span_imp {
+		color: red;
+	}
+</style>
+
 </head>
 <body>
 	
 	<form action="${pageContext.request.contextPath }/user_register" method="post">
 		<table align="center" border="1">
 			<tr>
+				<th colspan="2">有<span id="span_imp">*</span>为必填项</th>
+			</tr>
+			<tr>
 				<th>你的账号</th>
-				<td><input type="text" name="demo_User" value="${demo_User }" readonly="readonly"/></td>
+				<td><input type="text" name="demo_User" value="${demo_User }" readonly="readonly"/><span id="span_imp">*</span></td>
 			</tr>
 			<tr>
 				<th>输入用户名</th>
-				<td><input type="text" name="demo_Name" id="name" onclick="demo_user()" />
+				<td><input type="text" name="demo_Name" id="name" onclick="demo_user()" /><span id="span_imp">*</span>
 				<span id="user_info"></span>
 				</td>
 			</tr>
 			<tr>
 				<th>输入密码</th>
-				<td><input type="password" id="password" title="输入密码" id="password"/></td>
+				<td><input type="password" id="password" title="输入密码" id="password"/><span id="span_imp">*</span></td>
 			</tr>
 			<tr>
 				<th>确定密码</th>
-				<td><input type="password" name="demo_Password" id="testpassword" /></td>
+				<td><input type="password" name="demo_Password" id="testpassword" /><span id="span_imp">*</span></td>
 			</tr>
 			<tr>
 				<th>性别</th>
@@ -62,6 +71,10 @@
 			<tr>
 				<th>个人说明</th>
 				<td><input type="text" name="demo_Explain" /></td>
+			</tr>
+			<tr>
+				<th>设置界面颜色</th>
+				<td><input type="color" name="demo_Color" /></td>
 			</tr>
 			<tr>
 				<td colspan="2">

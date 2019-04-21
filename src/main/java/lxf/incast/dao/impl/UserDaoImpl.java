@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import lxf.incast.dao.UserDao;
 import lxf.incast.entity.User;
+import lxf.incast.pojo.User_Color;
 
 /**
  * 用户持久层实现类
@@ -24,9 +25,9 @@ public class UserDaoImpl implements UserDao {
 	 * 注册
 	 */
 	@Transactional(propagation = Propagation.REQUIRED)
-	public void register(User user) {
+	public void register(User_Color user_Color) {
 		
-		userDao.register(user);
+		userDao.register(user_Color);
 	}
 	
 	/**
@@ -34,9 +35,9 @@ public class UserDaoImpl implements UserDao {
 	 * @return
 	 */
 	@Transactional(propagation = Propagation.SUPPORTS)
-	public User login(User user) {
+	public User_Color login(User_Color user_Color) {
 		
-		return userDao.login(user);
+		return userDao.login(user_Color);
 	}
 	
 
