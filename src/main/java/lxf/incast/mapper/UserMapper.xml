@@ -16,5 +16,11 @@
 		WHERE demo_Name = #{demo_Name } AND demo_Password = #{demo_Password };
 	</select>
 	
-	<!--  -->
+	<!-- 更新 -->
+	<update id="updateUser" parameterType="user_Color">
+		UPDATE demo_user SET demo_User = #{demo_User}, demo_Password = #{demo_Password}, 
+							 demo_Name = #{demo_Name}, demo_Sex = #{demo_Sex}, demo_Email = #{demo_Email},
+							 demo_Address = #{demo_Address}, demo_Explain = #{demo_Explain}, demo_Color = #{demo_Color}
+						 WHERE demo_User = #{demo_User}
+	</update>
 </mapper>

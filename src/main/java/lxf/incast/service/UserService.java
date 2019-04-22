@@ -16,4 +16,7 @@ public interface UserService {
 
 	// 登录
 	public User_Color login(User_Color user_Color);
+	
+	//更新
+	public void updateUser(User_Color user_Color);
 }

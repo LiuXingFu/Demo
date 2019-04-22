@@ -67,6 +67,11 @@ public class UserController {
 		return "redirect:demo";
 	}
 	
+	/**
+	 * 退出登录
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/exit")
 	public String exit(HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -74,4 +79,24 @@ public class UserController {
 		return "login";
 	}
 
+	/**
+	 * 更新
+	 * @param request
+	 * @param user_Color
+	 * @return
+	 */
+	@RequestMapping("/updateUser")
+	public String update(HttpServletRequest request, User_Color user_Color) {
+		HttpSession session = request.getSession();
+		System.out.println(user_Color);
+		try {
+			userServiceImpl.updateUser(user_Color);
+			System.out.println(user_Color);
+			session.setAttribute("user", user_Color);
+			return "redirect:index";
+		} catch (Exception e) {
+			request.setAttribute("error", "错误...!");
+			return "error";
+		}
+	}
 }

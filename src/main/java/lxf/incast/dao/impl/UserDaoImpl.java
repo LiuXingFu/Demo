@@ -39,6 +39,13 @@ public class UserDaoImpl implements UserDao {
 		
 		return userDao.login(user_Color);
 	}
+
+	/**
+	 * 更新
+	 */
+	public void updateUser(User_Color user_Color) {
+		userDao.updateUser(user_Color);
+	}
 	
 
 }

@@ -40,29 +40,33 @@
 			</tr>
 			<tr>
 				<th>你的账号</th>
-				<td><input type="text" name="demo_User" value="${demo_User }" readonly="readonly"/><span id="span_imp">*</span></td>
+				<td><input type="text" name="demo_User" value="${demo_User }" readonly="readonly"/><span id="span_imp">&nbsp;*</span></td>
 			</tr>
 			<tr>
 				<th>输入用户名</th>
-				<td><input type="text" name="demo_Name" id="name" onclick="demo_user()" /><span id="span_imp">*</span>
+				<td><input type="text" name="demo_Name" id="name" onclick="demo_user()" /><span id="span_imp">&nbsp;*</span>
 				<span id="user_info"></span>
 				</td>
 			</tr>
 			<tr>
 				<th>输入密码</th>
-				<td><input type="password" id="password" title="输入密码" id="password"/><span id="span_imp">*</span></td>
+				<td><input type="password" id="password" title="输入密码" id="password"/><span id="span_imp">&nbsp;*</span></td>
 			</tr>
 			<tr>
 				<th>确定密码</th>
-				<td><input type="password" name="demo_Password" id="testpassword" /><span id="span_imp">*</span></td>
+				<td><input type="password" name="demo_Password" id="testpassword" /><span id="span_imp">&nbsp;*</span></td>
 			</tr>
 			<tr>
 				<th>性别</th>
-				<td><input type="text" name="demo_Sex" /></td>
+				<td>
+					<input type="radio" name="demo_Sex" value="1" checked="checked" />男
+					&nbsp;
+					<input type="radio" name="demo_Sex" value="0">女
+				</td>
 			</tr>
 			<tr>
 				<th>邮箱</th>
-				<td><input type="text" name="demo_Email" /></td>
+				<td><input type="email" name="demo_Email" /></td>
 			</tr>
 			<tr>
 				<th>居住地址</th>

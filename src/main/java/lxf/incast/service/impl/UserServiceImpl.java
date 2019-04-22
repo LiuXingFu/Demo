@@ -36,5 +36,13 @@ public class UserServiceImpl implements UserService {
 		return userDaoImpl.login(user_Color);
 	}
 
+	/**
+	 * 更新
+	 */
+	public void updateUser(User_Color user_Color) {
+		
+		userDaoImpl.updateUser(user_Color);
+	}
+
 	
 }

@@ -17,4 +17,6 @@ public interface UserDao {
 	public void register(User_Color user_Color);
 	//登录
 	public User_Color login(User_Color user_Color);
+	//更新
+	public void updateUser(User_Color user_Color);
 }
