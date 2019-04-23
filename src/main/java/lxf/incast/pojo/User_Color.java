@@ -1,5 +1,7 @@
 package lxf.incast.pojo;
 
+import lxf.incast.entity.User;
+
 /**
  * 用户信息
  * @author 我有一个小梦想
@@ -11,6 +13,7 @@ public class User_Color {
 	private Integer demo_User; //账号
 	private String demo_Password; //密码
 	private String demo_Name; //用户名
+	private String demo_Date; //出身日期
 	private String demo_Sex; //性别
 	private String demo_Email; //邮箱
 	private String demo_Address; //地址
@@ -39,6 +42,12 @@ public class User_Color {
 	}
 	public void setDemo_Name(String demo_Name) {
 		this.demo_Name = demo_Name;
+	}
+	public String getDemo_Date() {
+		return demo_Date;
+	}
+	public void setDemo_Date(String demo_Date) {
+		this.demo_Date = demo_Date;
 	}
 	public String getDemo_Sex() {
 		return demo_Sex;
@@ -73,9 +82,8 @@ public class User_Color {
 	@Override
 	public String toString() {
 		return "User_Color [demo_ID=" + demo_ID + ", demo_User=" + demo_User + ", demo_Password=" + demo_Password
-				+ ", demo_Name=" + demo_Name + ", demo_Sex=" + demo_Sex + ", demo_Email=" + demo_Email
-				+ ", demo_Address=" + demo_Address + ", demo_Explain=" + demo_Explain + ", demo_Color=" + demo_Color
-				+ "]";
+				+ ", demo_Name=" + demo_Name + ", demo_Date=" + demo_Date + ", demo_Sex=" + demo_Sex + ", demo_Email="
+				+ demo_Email + ", demo_Address=" + demo_Address + ", demo_Explain=" + demo_Explain + ", demo_Color="
+				+ demo_Color + "]";
 	}
-	
 }

@@ -38,9 +38,13 @@
 				</td>
 			</tr>
 			<tr>
+				<th>生日</th>
+				<td><input type="date" name="demo_Date" value="${sessionScope.user.demo_Date }" /></td>
+			</tr>
+			<tr>
 				<th>邮箱</th>
 				<td>
-					<input type="text" name="demo_Email" value="${sessionScope.user.demo_Email }"/>
+					<input type="email" name="demo_Email" value="${sessionScope.user.demo_Email }"/>
 				</td>
 			</tr>
 			<tr>

@@ -65,6 +65,10 @@
 				</td>
 			</tr>
 			<tr>
+				<th>生日</th>
+				<td><input type="date" name="demo_Date" /></td>
+			</tr>
+			<tr>
 				<th>邮箱</th>
 				<td><input type="email" name="demo_Email" /></td>
 			</tr>
