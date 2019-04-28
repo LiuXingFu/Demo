@@ -2,26 +2,32 @@ package lxf.incast.controller;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.alibaba.fastjson.JSON;
+
 import lxf.incast.dao.impl.TeachersUniversityDaoImpl;
+import lxf.incast.entity.GradeTable;
 import lxf.incast.entity.Record;
 import lxf.incast.entity.Teachers;
 import lxf.incast.entity.University_Town_2016;
 import lxf.incast.redis.RedisService;
 import lxf.incast.service.RecordService;
+import lxf.incast.service.impl.GradeTableServiceImpl;
 import lxf.incast.service.impl.RedcordServiceImpl;
 import lxf.incast.utils.AccountUserUtils;
+import lxf.incast.utils.RedisUtils;
 import lxf.incast.utils.ValidateCodeUtil;
 
 /**
@@ -104,5 +110,6 @@ public class IndexController {
 		session.setAttribute("sCode", code);
 		return "user/login";
 	}
+
 	
 }
