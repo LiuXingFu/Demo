@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>展示图片</title>
 </head>
 <body>
-${error }
-</body>
+<img src="${img }">
+<img alt="" src="/Demo/img/${img }">
+</body>1
 </html>

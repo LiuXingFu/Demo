@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-${error }
+<form action="/Demo/img.lxf" method="post" enctype="multipart/form-data">
+	<input type="file" name="fileImg" />
+	<input type="submit" value="提交"/>
+</form>
+<img alt="" src="/Demo/img/bg.jpg">
 </body>
 </html>

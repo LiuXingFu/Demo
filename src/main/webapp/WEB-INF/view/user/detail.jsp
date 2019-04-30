@@ -5,17 +5,47 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Demo_用户信息更改</title>
+<style type="text/css">
+	body {
+		width: 100%;
+		height: 100%;
+		background-color: ${sessionScope.user.demo_Color };
+	}
+</style>
 </head>
 <body>
+	&nbsp;&nbsp;
+	<a href="/Demo/index" target="demo_bottom">首页</a>
+	<c:if test="${user.demo_Name == null }">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/Demo/register" target="demo_bottom">注册</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/Demo/login" target="demo_bottom">登录</a>
+	</c:if>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<c:if test="${user.demo_Name != null }">
+		当前用户：
+		<img alt="" src="/Demo/img/${user.demo_userImg }" style="width: 20px; height: 20px;">
+		<a href="/Demo/user/detail" target="demo_bottom">${user.demo_Name }</a> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/Demo/exit" target="demo_top">退出登录</a>
+	</c:if>
+	&nbsp; ${error }
 	<form action="${pageContext.request.contextPath }/updateUser" method="post">
 		<input type="hidden" name="demo_ID" value="${sessionScope.user.demo_ID }"/>
-		<input type="hidden" name="demo_Password" value="${sessionScope.user.demo_Password }"/>		
+		<input type="hidden" name="demo_Password" value="${sessionScope.user.demo_Password }"/>
+		<input type="hidden" name="demo_userImg" value="${sessionScope.user.demo_userImg }"/>	
 		<table align="center" border="1">				
 			<tr>
 				<th colspan="2">
+					<a href="/Demo/user_Img">
+						<img alt="" src="/Demo/img/${sessionScope.user.demo_userImg }" style="width: 50px; height: 50px;">
+					</a>
+					<br/>
 					${sessionScope.user.demo_Name }
-				的详情</th>
+					的详情
+				</th>
 			</tr>
 			<tr>
 				<th>账号</th>
@@ -64,7 +94,11 @@
 				<td><input type="color" name="demo_Color" value="${sessionScope.user.demo_Color }"/></td>
 			</tr>
 			<tr>
-				<th colspan="2"><input type="submit" value="修改"/></th>
+				<th colspan="2">
+					<input type="submit" value="修改"/>
+					&nbsp;&nbsp;
+					<a href="/Demo/index">返回</a>
+				</th>
 			</tr>
 		</table>
 	</form>

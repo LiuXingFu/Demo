@@ -22,4 +22,7 @@ public interface UserDao {
 
 	// 更新
 	public void updateUser(User_Color user_Color);
+	
+	// 更新头像
+	public void updateUser_Img(User_Color user_Color);
 }

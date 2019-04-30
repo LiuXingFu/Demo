@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Demo_更新头像</title>
 </head>
 <body>
-${error }
+	<img alt="" src="/Demo/img/${sessionScope.user.demo_userImg }" style="width: 50px; height: 50px;">
+	<form action="/Demo/updateImg" method="post" enctype="multipart/form-data">
+		<input type="file" name="fileImg"/>
+		<input type="submit" value="确定"/>
+	</form>
 </body>
 </html>

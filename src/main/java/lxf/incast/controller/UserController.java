@@ -2,15 +2,13 @@ package lxf.incast.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import lxf.incast.entity.User;
 import lxf.incast.pojo.User_Color;
 import lxf.incast.service.impl.UserServiceImpl;
 import lxf.incast.utils.AccountUserUtils;
+import lxf.incast.utils.User_Img;
 
 /**
  * 用户展示层
@@ -58,13 +56,16 @@ public class UserController {
 		String sCode = (String) request.getSession().getAttribute("sCode");
 		if(codes.trim().equals(sCode)){
 			if(user_Name != null){
+				if(user_Name.getDemo_userImg() == null){
+					user_Name.setDemo_userImg(User_Img.defaultImg);
+				}
 				session.setAttribute("user", user_Name);
 			} else {
 				request.setAttribute("error", "用户名或密码错误请从新登录...！");
 				return "error";
 			}
 		}
-		return "redirect:demo";
+		return "redirect:index";
 	}
 	
 	/**
@@ -76,7 +77,7 @@ public class UserController {
 	public String exit(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.removeAttribute("user");
-		return "login";
+		return "index/index";
 	}
 
 	/**

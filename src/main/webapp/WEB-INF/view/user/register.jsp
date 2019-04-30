@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +30,34 @@
 		color: red;
 	}
 </style>
-
+<style type="text/css">
+	body {
+		width: 100%;
+		height: 100%;
+		background-color: ${sessionScope.user.demo_Color };
+	}
+</style>
 </head>
 <body>
+<div style="width: 50%;">
+	&nbsp;&nbsp;
+	<a href="/Demo/index" target="demo_bottom">首页</a>
+	<c:if test="${user.demo_Name == null }">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/Demo/register" target="demo_bottom">注册</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/Demo/login" target="demo_bottom">登录</a>
+	</c:if>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<c:if test="${user.demo_Name != null }">
+		<img alt="" src="/Demo/img/${user.userImg }" style="width: 20px; height: 20px;">
+		当前用户：
+		<img alt="" src="/Demo/img/${user.demo_userImg }" style="width: 20px; height: 20px;">
+		<a href="/Demo/user/detail" target="demo_bottom">${user.demo_Name }</a> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/Demo/exit" target="demo_top">退出登录</a>
+	</c:if>
+	&nbsp; ${error }
 	
 	<form action="${pageContext.request.contextPath }/user_register" method="post">
 		<table align="center" border="1">
@@ -43,13 +69,13 @@
 				<td><input type="text" name="demo_User" value="${demo_User }" readonly="readonly"/><span id="span_imp">&nbsp;*</span></td>
 			</tr>
 			<tr>
-				<th>输入用户名</th>
+				<th>用户名</th>
 				<td><input type="text" name="demo_Name" id="name" onclick="demo_user()" /><span id="span_imp">&nbsp;*</span>
 				<span id="user_info"></span>
 				</td>
 			</tr>
 			<tr>
-				<th>输入密码</th>
+				<th>密码</th>
 				<td><input type="password" id="password" title="输入密码" id="password"/><span id="span_imp">&nbsp;*</span></td>
 			</tr>
 			<tr>
@@ -91,6 +117,6 @@
 			</tr>
 		</table>
 	</form>
-	
+</div>	
 </body>
 </html>

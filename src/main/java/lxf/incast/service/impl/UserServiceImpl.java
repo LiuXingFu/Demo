@@ -44,5 +44,13 @@ public class UserServiceImpl implements UserService {
 		userDaoImpl.updateUser(user_Color);
 	}
 
+	/*
+	 * 更新头像(non-Javadoc)
+	 * @see lxf.incast.service.UserService#updateUser_Img(lxf.incast.pojo.User_Color)
+	 */
+	public void updateUser_Img(User_Color user_Color) {
+		userDaoImpl.updateUser_Img(user_Color);
+	}
+
 	
 }

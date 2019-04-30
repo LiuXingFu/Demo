@@ -46,6 +46,14 @@ public class UserDaoImpl implements UserDao {
 	public void updateUser(User_Color user_Color) {
 		userDao.updateUser(user_Color);
 	}
+
+	/*
+	 * 更新头像
+	 * @see lxf.incast.dao.UserDao#updateUser_Img(lxf.incast.pojo.User_Color)
+	 */
+	public void updateUser_Img(User_Color user_Color) {
+		userDao.updateUser_Img(user_Color);
+	}
 	
 
 }

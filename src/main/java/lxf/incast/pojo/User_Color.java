@@ -19,6 +19,7 @@ public class User_Color {
 	private String demo_Address; //地址
 	private String demo_Explain; //说明
 	private String demo_Color; //用户界面颜色
+	private String demo_userImg; //头像
 	public Integer getDemo_ID() {
 		return demo_ID;
 	}
@@ -79,11 +80,17 @@ public class User_Color {
 	public void setDemo_Color(String demo_Color) {
 		this.demo_Color = demo_Color;
 	}
+	public String getDemo_userImg() {
+		return demo_userImg;
+	}
+	public void setDemo_userImg(String demo_userImg) {
+		this.demo_userImg = demo_userImg;
+	}
 	@Override
 	public String toString() {
 		return "User_Color [demo_ID=" + demo_ID + ", demo_User=" + demo_User + ", demo_Password=" + demo_Password
 				+ ", demo_Name=" + demo_Name + ", demo_Date=" + demo_Date + ", demo_Sex=" + demo_Sex + ", demo_Email="
 				+ demo_Email + ", demo_Address=" + demo_Address + ", demo_Explain=" + demo_Explain + ", demo_Color="
-				+ demo_Color + "]";
+				+ demo_Color + ", demo_userImg=" + demo_userImg + "]";
 	}
 }

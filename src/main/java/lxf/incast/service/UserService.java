@@ -1,6 +1,5 @@
 package lxf.incast.service;
 
-import lxf.incast.entity.User;
 import lxf.incast.pojo.User_Color;
 
 /**
@@ -17,6 +16,9 @@ public interface UserService {
 	// 登录
 	public User_Color login(User_Color user_Color);
 	
-	//更新
+	// 更新
 	public void updateUser(User_Color user_Color);
+	
+	//更新头像
+	public void updateUser_Img(User_Color user_Color);
 }
