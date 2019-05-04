@@ -64,6 +64,7 @@ public class UserUpdateImgController {
 				
 			}
 			user_Color.setDemo_userImg(uuidImg + extName);
+			userServiceImpl.updateUser_Img(user_Color);
 			session.setAttribute("user", user_Color);
 			return "redirect:index";
 		} catch (Exception e) {

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 命名空间 -->
+<mapper namespace="lxf.incast.dao.DynamicDao">
+	
+	<resultMap type="dynamic_User" id="dynamicUser">
+		<id column="" property=""/>
+		<result column="demo_Dynamic" property="demo_Dynamic"/>
+		<result column="demo_ReleaseDate" property="demo_ReleaseDate"/>
+		<result column="demo_Praise" property="demo_Praise"/>
+		<result column="demo_Name" property="demo_Name"/>
+		<result column="demo_userImg" property="demo_userImg"/>
+	</resultMap>
+	
+	<!-- 查询所有动态 -->
+	<select id="getDynamicList" resultMap="dynamicUser">
+		SELECT 
+			d.demo_Dynamic,
+			d.demo_ReleaseDate,
+			d.demo_Praise,
+			u.demo_Name,
+			u.demo_userImg
+		FROM 
+			demo_dynamic d
+		LEFT JOIN 
+			demo_user u
+		ON 
+			d.demo_User = u.demo_User;
+	</select>
+	
+	<!-- 发布动态 -->
+	<insert id="setDynamicAdd" parameterType="dynamic_User" >
+		INSERT INTO demo_dynamic(demo_User, demo_Dynamic, demo_ReleaseDate, demo_Praise) 
+					VALUE(#{demo_User}, #{demo_Dynamic}, #{demo_ReleaseDate}, #{demo_Praise})
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

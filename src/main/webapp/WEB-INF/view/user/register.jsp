@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/Demo/css/public.css"/>
 <title>Demo__用户注册</title>
 <script src="${pageContext.request.contextPath }/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
@@ -39,7 +40,7 @@
 </style>
 </head>
 <body>
-<div style="width: 50%;">
+<div style="width: 50%; background-color: #f2f3f5;">
 	&nbsp;&nbsp;
 	<a href="/Demo/index" target="demo_bottom">首页</a>
 	<c:if test="${user.demo_Name == null }">

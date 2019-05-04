@@ -61,7 +61,7 @@ public class PageBean implements Serializable {
 		this.totalCount = totalCount;
 	}
 	public int getPageSize() {
-		return 5;
+		return 10;
 	}
 	
 	

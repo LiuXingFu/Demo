@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/Demo/css/public.css"/>
 <title>Demo_更新头像</title>
 </head>
 <body>

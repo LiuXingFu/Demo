@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/Demo/css/public.css"/>
 <title>Demo_1610成绩</title>
 <style type="text/css">
 	body {

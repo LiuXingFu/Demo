@@ -5,10 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Demo_指导老师</title>
 <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css" />
 <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Demo/css/public.css"/>
+<title>Demo_指导老师</title>
 <script>
 	$(function() {
 		$( "#accordion" ).accordion();
@@ -27,7 +28,7 @@
 </style>
 </head>
 <body>
-<div style="margin: 0px auto; width: 60%; margin-bottom: 10px;">
+<div style="margin: 0px auto; width: 60%; margin-bottom: 10px; margin-top: 20px; background-color: #f2f3f5;">
 	<a href="/Demo/index" target="demo_bottom">首页</a>
 	<c:if test="${user.demo_Name == null }">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -45,7 +46,7 @@
 	</c:if>
 	&nbsp; ${error }
 </div>
-<div style="margin: 0px auto; width: 60%;">
+<div style="margin: 0px auto; width: 60%; background-color: #f2f3f5;">
 	<h3>指导老师</h3>
 	<div id="accordion">
 		<c:forEach items="${teachers_List }" var="teachers" varStatus="teac">

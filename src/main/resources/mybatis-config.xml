@@ -37,6 +37,9 @@
 		<typeAlias type="lxf.incast.entity.Teachers" alias="teachers"/>
 		<!-- 用户(包含界面颜色) -->
 		<typeAlias type="lxf.incast.pojo.User_Color" alias="user_Color"/>
+		<!-- 动态 -->
+		<typeAlias type="lxf.incast.entity.Dynamic" alias="dynamic"/>
+		<typeAlias type="lxf.incast.pojo.Dynamic_User" alias="dynamic_User"/>
 	</typeAliases>
 	
 	<!-- mappers告诉Mybatis去哪里找相关映射 -->
@@ -51,6 +54,7 @@
 		<mapper resource="lxf/incast/mapper/AccountMapper.xml"/>
 		<!-- 大学城信息 -->
 		<mapper resource="lxf/incast/mapper/Teachers_university.xml"/>
-		<!--  -->
+		<!-- 动态 -->
+		<mapper resource="lxf/incast/mapper/DynamicMapper.xml"/>
 	</mappers>
 </configuration>

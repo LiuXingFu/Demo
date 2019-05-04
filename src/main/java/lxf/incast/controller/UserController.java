@@ -52,20 +52,24 @@ public class UserController {
 	public String login(HttpServletRequest request, User_Color user_Color, String code) {
 		User_Color user_Name = userServiceImpl.login(user_Color);
 		HttpSession session = request.getSession();
-		String codes = request.getParameter("code");
+		//String codes = request.getParameter("code");
 		String sCode = (String) request.getSession().getAttribute("sCode");
-		if(codes.trim().equals(sCode)){
+		System.out.println(code+" ==== "+sCode);
+		if(code.equals(sCode)){
 			if(user_Name != null){
 				if(user_Name.getDemo_userImg() == null){
 					user_Name.setDemo_userImg(User_Img.defaultImg);
 				}
 				session.setAttribute("user", user_Name);
+				return "redirect:index";
 			} else {
 				request.setAttribute("error", "用户名或密码错误请从新登录...！");
-				return "error";
+				return "user/login";
 			}
+		} else {
+			request.setAttribute("error", "验证码错误...！");
+			return "user/login";
 		}
-		return "redirect:index";
 	}
 	
 	/**
