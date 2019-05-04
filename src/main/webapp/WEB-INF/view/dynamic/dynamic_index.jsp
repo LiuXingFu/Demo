@@ -28,6 +28,7 @@
 	function demo_release(demo_release) {
 		if(demo_release == null){
 			window.location.href="#";
+			alert("未登录...");
 		} else {
 			window.location.href="/Demo/release";
 		}
