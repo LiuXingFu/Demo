@@ -20,4 +20,7 @@ public interface DynamicDao {
 	
 	//发布动态
 	public void setDynamicAdd(Dynamic_User dynamic_User);
+	
+	//动态赞
+	public void updateDynamic(int praise, String demo_User);
 }

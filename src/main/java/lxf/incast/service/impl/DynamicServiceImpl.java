@@ -40,4 +40,13 @@ public class DynamicServiceImpl implements DynamicService {
 		dynamicDao.setDynamicAdd(dynamic_User);
 	}
 
+	/*
+	 * 动态赞(non-Javadoc)
+	 * @see lxf.incast.service.DynamicService#updateDynamic(int)
+	 */
+	public void updateDynamic(int praise, String demo_User) {
+		
+		dynamicDao.updateDynamic(praise, demo_User);
+	}
+
 }

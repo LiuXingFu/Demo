@@ -39,4 +39,13 @@ public class DynamicDaoImpl implements DynamicDao {
 		dynamicDao.setDynamicAdd(dynamic_User);
 	}
 
+	/*
+	 * 动态赞(non-Javadoc)
+	 * @see lxf.incast.dao.DynamicDao#updateDynamic(int)
+	 */
+	public void updateDynamic(int praise, String demo_User) {
+		
+		dynamicDao.updateDynamic(praise, demo_User);
+	}
+
 }

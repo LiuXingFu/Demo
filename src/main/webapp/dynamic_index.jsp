@@ -36,32 +36,22 @@
 	}	
 </script>
 <script type="text/javascript">
-	var demo_TrueFlase;
-	function demo_praise(dynamic_id, dynamic_num, dynamic_User, demo_User) {
-		if(demo_User != null) {
-			if(demo_TrueFlase == null || demo_TrueFlase != demo_User){
-				//得到异步对象
-				var xmlHttp = createXMLHttpRequest();
-				//打开域服务器的链接：1.请求方式  ， 2.请求URL地址 ， 3.是否为异步请求
-				xmlHttp.open("GET", "/Demo/dynamic_praise?dynamic_praise="+ dynamic_num +"&demo_User="+ dynamic_User, true);
-				//发送请求：GET请求没有实体，但也要给null，不然FireFox可能不会发送
-				xmlHttp.send(null);
-				/** 给异步对象的onreadystachange事件注册监听器 **/
-				xmlHttp.onreadystatechange = function() { //当xmlHttp的状态发生改变时执行
-					//双重判断：4，响应结束 ， 200，响应成功
-					if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-						//获取服务器响应结束
-						var text = xmlHttp.responseText;
-						document.getElementById("but"+dynamic_id).innerHTML = "赞("+text+")";
-					}
-				}
-				demo_TrueFlase = demo_User;
-			} else {
-				return false;
+
+	function demo_praise(dynamic_id, dynamic_num, demo_User) {
+		//得到异步对象
+		var xmlHttp = createXMLHttpRequest();
+		//打开域服务器的链接：1.请求方式  ， 2.请求URL地址 ， 3.是否为异步请求
+		xmlHttp.open("GET" , "/Demo/dynamicPraise?dynamic_praise="+dynamic_num+"&demo_User="+demo_User , true);
+		//发送请求：GET请求没有实体，但也要给null，不然FireFox可能不会发送
+		xmlHttp.send(null);
+		/** 给异步对象的onreadystachange事件注册监听器 **/
+		xmlHttp.onreadystatechange = function() { //当xmlHttp的状态发生改变时执行
+			//双重判断：4，响应结束 ， 200，响应成功
+			if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+				//获取服务器响应结束
+				var text = xmlHttp.responseText;
+				document.getElementById("but"+dynamic_id).innerHTML = "赞("+text+")";
 			}
-		} else {
-			alert("该操作需登录才能完成...");
-			return false;
 		}
 	}
 </script>
@@ -105,7 +95,7 @@
 							</p>
 						<hr />
 							<p style="margin-left: 50%;">
-								<button id="but${dynamic_num.count}" onclick="demo_praise(${dynamic_num.count}, ${dynamic.demo_Praise }, ${dynamic.demo_User }, ${user.demo_User });">赞(${dynamic.demo_Praise })</button>
+								<button id="but${dynamic_num.count}" onclick="demo_praise(${dynamic_num.count}, ${dynamic.demo_Praise }, ${dynamic.demo_User });">赞(${dynamic.demo_Praise })</button>
 							</p>
 						<hr />
 					</p>

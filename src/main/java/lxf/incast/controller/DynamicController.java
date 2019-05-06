@@ -1,14 +1,17 @@
 package lxf.incast.controller;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lxf.incast.entity.User;
 import lxf.incast.pojo.Dynamic_User;
@@ -61,5 +64,13 @@ public class DynamicController {
 		dynamicService.setDynamicAdd(dynamic_User);
 		return "redirect:dynamic_index";
 	}
-	
+
+	@RequestMapping(value="/dynamic_praise")
+	@ResponseBody
+	public void dynamicPraise(HttpServletResponse response,int dynamic_praise, String demo_User) throws IOException {
+		System.err.println(dynamic_praise+"============"+demo_User);
+		dynamicService.updateDynamic(dynamic_praise+1, demo_User);
+		System.out.println(dynamic_praise);
+		response.getWriter().write(String.valueOf(dynamic_praise+1));
+	}
 }

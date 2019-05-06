@@ -21,6 +21,7 @@
 			d.demo_ReleaseDate,
 			d.demo_Praise,
 			u.demo_Name,
+			u.demo_User,
 			u.demo_userImg
 		FROM 
 			demo_dynamic d
@@ -35,6 +36,11 @@
 		INSERT INTO demo_dynamic(demo_User, demo_Dynamic, demo_ReleaseDate, demo_Praise) 
 					VALUE(#{demo_User}, #{demo_Dynamic}, #{demo_ReleaseDate}, #{demo_Praise})
 	</insert>
+	
+	<!-- 动态赞  -->
+	<update id="updateDynamic" >
+		UPDATE demo_dynamic SET  demo_Praise = #{0 } WHERE demo_User = #{1 }
+	</update>
 </mapper>
 
 
